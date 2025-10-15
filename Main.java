@@ -11,6 +11,10 @@ public class Main {
         // Adding some randomness, because otherwise it's boring
         Random rand = new Random();
 
+        //Images for winning or losing
+        ImageIcon win = new ImageIcon("src/win.png");
+        ImageIcon lose = new ImageIcon("src/lose.png");
+
         // Creates window + stops code on closing of window
         JFrame window = new JFrame("Trying for SUCCESS");
         window.setSize(800,  400);
@@ -45,9 +49,11 @@ public class Main {
             if (chance < 90) {
                 System.out.println("You won!");
                 successLabel.setText("You won!");
+                successLabel.setIcon(win);
             } else {
                 System.out.println("You lost!");
                 successLabel.setText("You lost!");
+                successLabel.setIcon(lose);
             }
             successLabel.setVisible(true);
         });
@@ -61,9 +67,11 @@ public class Main {
             if (chance < 90) {
                 System.out.println("You lost!");
                 failureLabel.setText("You lost!");
+                failureLabel.setIcon(lose);
             } else {
                 System.out.println("You won!");
                 failureLabel.setText("You won!");
+                failureLabel.setIcon(win);
             }
             failureLabel.setVisible(true);
         });
